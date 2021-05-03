@@ -24,6 +24,7 @@ Vote class >> user: aUser likesPublication: aPublication [
 	^ self new
 		user: aUser;
 		publication: aPublication;
+		like;
 		yourself
 ]
 
@@ -34,7 +35,6 @@ Vote >> dislike [
 
 { #category : #initialize }
 Vote >> initialize [
-	isLike := true.
 	timstamp := DateAndTime now.
 	
 ]

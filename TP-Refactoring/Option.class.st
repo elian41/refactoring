@@ -6,7 +6,7 @@ Class {
 
 { #category : #private }
 Option >> getInformation: aUser with: cuoora [
-	self subclassResponsibility 
+	^ self last: aUser
 ]
 
 { #category : #private }

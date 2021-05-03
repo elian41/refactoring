@@ -25,6 +25,12 @@ Post >> description: anObject [
 	description := anObject
 ]
 
+{ #category : #initialization }
+Post >> initialize [
+	votes := OrderedCollection new.
+	timestamp := DateAndTime now.
+]
+
 { #category : #'as yet unclassified' }
 Post >> negativeVotes [
 	^votes reject:[:vote | vote isLike]
