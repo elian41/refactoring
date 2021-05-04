@@ -25,6 +25,11 @@ Post >> description: anObject [
 	description := anObject
 ]
 
+{ #category : #testing }
+Post >> hasMorePositiveVotesThan: aPost [
+	^ self positiveVotes size > aPost positiveVotes size
+]
+
 { #category : #initialization }
 Post >> initialize [
 	votes := OrderedCollection new.
@@ -39,6 +44,16 @@ Post >> negativeVotes [
 { #category : #'as yet unclassified' }
 Post >> positiveVotes [
 	^votes select:[:vote | vote isLike]
+]
+
+{ #category : #'as yet unclassified' }
+Post >> sameDate: aDate [
+	^ self timestamp asDate = aDate
+]
+
+{ #category : #'as yet unclassified' }
+Post >> sameUser: aUser [
+	^ self user = aUser
 ]
 
 { #category : #'as yet unclassified' }

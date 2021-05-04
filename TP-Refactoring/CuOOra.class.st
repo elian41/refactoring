@@ -51,7 +51,7 @@ CuOOra >> questions [
 
 { #category : #protected }
 CuOOra >> questionsToday [
-	^self questions select:[:q | (q timestamp asDate = Date today)].
+	^self questions select:[:q | (q sameDate: Date today)].
 
 ]
 

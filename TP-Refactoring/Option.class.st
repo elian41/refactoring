@@ -16,7 +16,7 @@ Option >> last: aInformation [
 
 { #category : #private }
 Option >> mySort: aCollection [
-	^ aCollection asSortedCollection:[ :a :b | a positiveVotes size > b positiveVotes size ]
+	^ aCollection asSortedCollection:[ :a :b | a hasMorePositiveVotesThan: b  ]
 ]
 
 { #category : #private }
@@ -26,5 +26,5 @@ Option >> neededInformation: aData [
 
 { #category : #retrieving }
 Option >> retrieveQuestions: aUser with: cuoora [
-	^ (self getInformation: aUser with: cuoora) reject: [ :q | q user = aUser ]
+	^ (self getInformation: aUser with: cuoora) reject: [ :q | q sameUser:aUser ]
 ]
