@@ -9,11 +9,14 @@ Class {
 
 { #category : #'instance creation' }
 Answer class >> new: anAnswer user: aUser question: aQuestion [
-	^ self new
-		description: anAnswer;
-		user: aUser;
-		question: aQuestion;
-		yourself
+	^ self new initialize: anAnswer user: aUser question: aQuestion
+]
+
+{ #category : #initialization }
+Answer >> initialize: anAnswer user: aUser question: aQuestion [
+	description := anAnswer.
+	user := aUser.
+	question := aQuestion
 ]
 
 { #category : #testing }

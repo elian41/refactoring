@@ -16,7 +16,7 @@ Class {
 
 { #category : #'instance-creation' }
 User class >> username: aUsername password: aPassword questionRetriever: aQuestionRetriever [
-	^ self initialize: aUsername password: aPassword questionRetriever: aQuestionRetriever.
+	^ self new initialize: aUsername password: aPassword questionRetriever: aQuestionRetriever.
 ]
 
 { #category : #adding }

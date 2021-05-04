@@ -11,21 +11,13 @@ Class {
 
 { #category : #'instance creation' }
 Question class >> newWithTitle: title description: aDescription user: aUser [
-	^ self new
-		title: title;
-		description: aDescription;
-		user: aUser;
-		yourself.
+	^ self new initialize: title description: aDescription user: aUser
+		
 ]
 
 { #category : #'instance creation' }
 Question class >> newWithTitle: title description: aDescription user: aUser topic: aTopic [
-	^ self new
-		title: title;
-		description: aDescription;
-		addTopic: aTopic;
-		user: aUser;
-		yourself.
+	^ self new initialize: title description: aDescription topic: aTopic user: aUser
 ]
 
 { #category : #adding }
@@ -41,6 +33,19 @@ Question >> initialize [
 	answers := OrderedCollection new.
 	topics := OrderedCollection new.
 	
+]
+
+{ #category : #initialization }
+Question >> initialize: aTitle description: aDescription topic: aTopic user: aUser [
+	self initialize: aTitle description: aDescription user: aUser.
+	self addTopic: aTopic
+]
+
+{ #category : #initialization }
+Question >> initialize: aTitle description: aDescription user: aUser [
+	title := aTitle.
+	description := aDescription.
+	user := aUser
 ]
 
 { #category : #accessing }
