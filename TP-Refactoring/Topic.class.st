@@ -11,10 +11,8 @@ Class {
 
 { #category : #'intance creation' }
 Topic class >> name: aName description: aDescription [
-	^ self new
-		name: aName;
-		description: aDescription;
-		yourself
+	^ self new initialize: aName description: aDescription.
+
 ]
 
 { #category : #accessing }
@@ -35,6 +33,12 @@ Topic >> description: anObject [
 { #category : #initialize }
 Topic >> initialize [
 	questions := OrderedCollection new.
+]
+
+{ #category : #initialization }
+Topic >> initialize: aName description: aDescription [
+	name := aName.
+	description := aDescription
 ]
 
 { #category : #accessing }

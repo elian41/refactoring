@@ -10,12 +10,12 @@ Class {
 
 { #category : #'instance creation' }
 QuestionRetriever class >> new: cuoora [
-	^ self new cuoora: cuoora
+	^ self new initialize: cuoora
 ]
 
 { #category : #'instance creation' }
 QuestionRetriever class >> new: cuoora and: aOption [
-	^ self new cuoora: cuoora; option:aOption; yourself.
+	^ self new initialize: cuoora option: aOption
 ]
 
 { #category : #accesing }
@@ -26,6 +26,17 @@ QuestionRetriever >> cuoora: aCuooraInstance [
 { #category : #initializing }
 QuestionRetriever >> initialize [
 	option := (Social new).
+]
+
+{ #category : #initialization }
+QuestionRetriever >> initialize: aCuoora [
+	cuoora := aCuoora
+]
+
+{ #category : #initialization }
+QuestionRetriever >> initialize: aCuoora option: aOption [
+	cuoora := aCuoora.
+	option := aOption
 ]
 
 { #category : #accesing }
