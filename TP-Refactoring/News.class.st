@@ -4,7 +4,7 @@ Class {
 	#category : #'TP-Refactoring-Model'
 }
 
-{ #category : #'as yet unclassified' }
+{ #category : #retrieving }
 News >> getInformation: aUser with: cuoora [
 	^ self last: cuoora
 ]

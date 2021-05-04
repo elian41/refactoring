@@ -4,7 +4,7 @@ Class {
 	#category : #'TP-Refactoring-Model'
 }
 
-{ #category : #'as yet unclassified' }
+{ #category : #private }
 PopularToday >> getInformation: aUser with: cuoora [
 	^ self last: cuoora
 ]

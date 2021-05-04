@@ -14,11 +14,6 @@ Option >> last: aInformation [
 	^((self neededInformation: aInformation) last: (100 min: (self neededInformation: aInformation) size))
 ]
 
-{ #category : #enumerating }
-Option >> myReject: aCollection with: aUser [
-	^ aCollection reject: [ :q | q user = aUser ]
-]
-
 { #category : #private }
 Option >> mySort: aCollection [
 	^ aCollection asSortedCollection:[ :a :b | a positiveVotes size > b positiveVotes size ]
@@ -31,5 +26,5 @@ Option >> neededInformation: aData [
 
 { #category : #retrieving }
 Option >> retrieveQuestions: aUser with: cuoora [
-	^self myReject: (self getInformation: aUser with: cuoora) with: aUser 
+	^ (self getInformation: aUser with: cuoora) reject: [ :q | q user = aUser ]
 ]
